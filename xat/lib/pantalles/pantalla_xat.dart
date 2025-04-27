@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xat/widgets/bambolla_missatge_alie.dart';
 import 'package:xat/widgets/bambolla_missatge_propi.dart';
+import 'package:xat/widgets/camp_caixa_text.dart';
 
 class PantallaXat extends StatelessWidget {
   const PantallaXat({super.key});
@@ -41,7 +42,7 @@ class _CosPantallaXat extends StatelessWidget {
                 },
               ),
             ),
-            Text('Món')
+            CampCaixaText(),
           ],
         ),
       ),
