@@ -18,7 +18,7 @@ class BambollaMissatgeAlie extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Altre text curt genèric',
+              'asdf asdf asdf',
               style: TextStyle(
                 color: Colors.white,
               ),
@@ -42,7 +42,15 @@ class _Imatge extends StatelessWidget {
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
         'https://wallpapers.com/images/hd/1920-x-1080-naruto-puo1nvsest4fw828.jpg',
-        width: midaDispositiu.width * 0.75
+        width: midaDispositiu.width * 0.75,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null ) return child;
+          return Container(
+            width: midaDispositiu.width * 0.75,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: const Text('Carregant imatge')
+          );
+        },
       )
     );
   }

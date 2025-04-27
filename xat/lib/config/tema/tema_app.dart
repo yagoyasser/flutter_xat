@@ -22,8 +22,7 @@ class TemaApp {
     return ThemeData(
       useMaterial3: true,
       colorSchemeSeed: _ColorsTema[colorSeleccionat], 
-      // Tema oscur
-      // brightness: Brightness.dark,
+      // **Tema oscur** brightness: Brightness.dark,
     );
   }
 }
