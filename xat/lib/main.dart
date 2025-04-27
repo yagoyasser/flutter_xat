@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:xat/config/tema/tema_app.dart';
+import 'package:xat/pantalles/pantalla_xat.dart';
 
 void main () => runApp(const MyApp());
 
@@ -12,17 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Xat',
       debugShowCheckedModeBanner: false,
       theme: TemaApp().tema(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Xat'),
-        ),
-        body: Center(
-          child: FilledButton.tonal(
-            onPressed: () {},
-            child: const Text('Clica\'m')
-          )
-        )
-      ),
+      home: PantallaXat()
     );
   }
 }
