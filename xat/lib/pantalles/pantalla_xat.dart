@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xat/widgets/bambolla_missatge_alie.dart';
 import 'package:xat/widgets/bambolla_missatge_propi.dart';
 
 class PantallaXat extends StatelessWidget {
@@ -34,7 +35,9 @@ class _CosPantallaXat extends StatelessWidget {
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return BambollaMissatgePropi();
+                  return (index % 2 == 0)
+                    ? BambollaMissatgeAlie()
+                    : BambollaMissatgePropi();
                 },
               ),
             ),
