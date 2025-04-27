@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xat/widgets/bambolla_missatge_propi.dart';
 
 class PantallaXat extends StatelessWidget {
   const PantallaXat({super.key});
@@ -26,14 +27,14 @@ class _CosPantallaXat extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             Expanded(
               child: ListView.builder(
                 itemCount: 100,
                 itemBuilder: (context, index) {
-                  return Text('Índex: $index');
+                  return BambollaMissatgePropi();
                 },
               ),
             ),

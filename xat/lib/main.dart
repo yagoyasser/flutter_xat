@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Xat',
       debugShowCheckedModeBanner: false,
-      theme: TemaApp().tema(),
+      theme: TemaApp(colorSeleccionat: 0).tema(),
       home: PantallaXat()
     );
   }
