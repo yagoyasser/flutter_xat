@@ -1,9 +1,9 @@
-enum autor { propi, alie }
+enum AutorMissatge { propi, alie }
 
 class Missatge {
   final String text;
   final String? imatgeUrl;
-  final autor autorMissatge;
+  final AutorMissatge autorMissatge;
 
   Missatge({
     required this.text,
