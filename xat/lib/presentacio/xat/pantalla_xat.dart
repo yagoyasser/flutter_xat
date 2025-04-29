@@ -40,6 +40,7 @@ class _CosPantallaXat extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: providerXat.controladorScroll,
                 itemCount: providerXat.missatges.length,
                 itemBuilder: (context, index) {
                   final missatge = providerXat.missatges[index];
