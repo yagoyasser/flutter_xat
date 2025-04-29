@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class CampCaixaText extends StatelessWidget {
-  const CampCaixaText({super.key});
+  final ValueChanged<String> onValue;
+
+  const CampCaixaText({
+    super.key,
+    required this.onValue
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +28,7 @@ class CampCaixaText extends StatelessWidget {
           icon: Icon(Icons.send_outlined),
           onPressed: () {
             final missatge = controladorText.value.text;
-            print('Missatge enviat: $missatge');
+            onValue(missatge);
             controladorText.clear();
           }
         ),
@@ -34,7 +39,7 @@ class CampCaixaText extends StatelessWidget {
       decoration: CaixaEnviarMissatge,
       focusNode: focusNode,
       onFieldSubmitted: (value) {
-        print('Tecla Enter premuda. Missatge: $value');
+        onValue(value);
         controladorText.clear();
         focusNode.requestFocus(); // El teclat no es minimitzarà una vegada premut Enter/Fet
       },

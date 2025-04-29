@@ -50,7 +50,9 @@ class _CosPantallaXat extends StatelessWidget {
                 },
               ),
             ),
-            CampCaixaText(),
+            CampCaixaText(
+              onValue: (value) => providerXat.enviarMissatge(value),
+            ),
           ],
         ),
       ),

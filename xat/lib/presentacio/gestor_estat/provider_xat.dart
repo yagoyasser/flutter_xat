@@ -14,6 +14,9 @@ class ProviderXat extends ChangeNotifier{
   ];
 
   Future<void> enviarMissatge(String misstage) async {
-    
+    final nouMissatge = Missatge(text: misstage, autorMissatge: AutorMissatge.propi);
+    missatges.add(nouMissatge);
+
+    notifyListeners();
   }
 }
