@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:xat/config/helpers/si_no_resposta.dart';
 import 'package:xat/domini/entitats/missatge.dart';
 
 class ProviderXat extends ChangeNotifier{
   final ScrollController controladorScroll = ScrollController();
+  final SiNoResposta obtinMissatge = SiNoResposta();
 
   List<Missatge> missatges = [
     Missatge(
@@ -15,14 +17,22 @@ class ProviderXat extends ChangeNotifier{
     ),
   ];
 
-  Future<void> enviarMissatge(String misstage) async {
-    if (misstage.isEmpty) return;
+  Future<void> enviarMissatge(String missatage) async {
+    if (missatage.isEmpty) return;
 
-    final nouMissatge = Missatge(text: misstage, autorMissatge: AutorMissatge.propi);
+    final nouMissatge = Missatge(text: missatage, autorMissatge: AutorMissatge.propi);
     missatges.add(nouMissatge);
+
+    if (missatage.endsWith('?')) {
+      await rebreMissatge();
+    }
 
     notifyListeners();
     moureScrollBaix();
+  }
+
+  Future<void> rebreMissatge() async {
+    final missatgeAlie = await obtinMissatge.obtinResposta();
   }
 
   void moureScrollBaix() {
