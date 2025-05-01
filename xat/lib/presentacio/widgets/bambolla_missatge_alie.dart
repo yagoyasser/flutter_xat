@@ -32,7 +32,8 @@ class BambollaMissatgeAlie extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        _Imatge(),
+        if (missatge.imatgeUrl != null) // A difèncial del tutorial, s'ha de fer aquesta comprobació perquè el missatge aliè inicial no adjunta imatge i, conseqüentment, dona error
+          _Imatge(missatge.imatgeUrl!),
         const SizedBox(height: 20),
       ],
     );
@@ -40,6 +41,12 @@ class BambollaMissatgeAlie extends StatelessWidget {
 }
 
 class _Imatge extends StatelessWidget {
+  final String imatgeUrl;
+
+  const _Imatge(
+    this.imatgeUrl
+  );
+
   @override
   Widget build(BuildContext context) {
     final midaDispositiu = MediaQuery.of(context).size;
@@ -47,7 +54,7 @@ class _Imatge extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        'https://wallpapers.com/images/hd/1920-x-1080-naruto-puo1nvsest4fw828.jpg',
+        imatgeUrl,
         width: midaDispositiu.width * 0.75,
         loadingBuilder: (context, child, loadingProgress) {
           if (loadingProgress == null ) return child;

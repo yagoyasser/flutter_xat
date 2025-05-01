@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:xat/config/tema/tema_app.dart';
 import 'package:xat/presentacio/gestor_estat/provider_xat.dart';
-import 'package:xat/presentacio/xat/pantalla_xat.dart';
+import 'package:xat/presentacio/pantalles/pantalla_xat.dart';
 
 void main () => runApp(const MyApp());
 
