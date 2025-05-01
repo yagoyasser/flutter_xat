@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:xat/config/helpers/si_no_resposta.dart';
+import 'package:xat/config/helpers/obtin_si_no_resposta.dart';
 import 'package:xat/domini/entitats/missatge.dart';
 
 class ProviderXat extends ChangeNotifier{
@@ -33,6 +33,10 @@ class ProviderXat extends ChangeNotifier{
 
   Future<void> rebreMissatge() async {
     final missatgeAlie = await obtinMissatge.obtinResposta();
+    missatges.add(missatgeAlie);
+
+    notifyListeners();
+    moureScrollBaix();
   }
 
   void moureScrollBaix() {
