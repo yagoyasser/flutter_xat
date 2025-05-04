@@ -32,7 +32,7 @@ class BambollaMissatgeAlie extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 10),
-        if (missatge.imatgeUrl != null) // A difèncial del tutorial, s'ha de fer aquesta comprobació perquè el missatge aliè inicial no adjunta imatge i, conseqüentment, dona error
+        if (missatge.imatgeUrl != null) // A diferència del tutorial, s'ha de fer aquesta comprobació perquè el missatge aliè inicial no adjunta imatge i, conseqüentment, dona error
           _Imatge(missatge.imatgeUrl!),
         const SizedBox(height: 20),
       ],
